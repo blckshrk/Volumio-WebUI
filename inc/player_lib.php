@@ -194,9 +194,14 @@ function sysCmd($syscmd) {
 	return $output;
 }
 
-// Asynchronous version of sysCmd()
+/**
+ * Asynchronous version of sysCmd()
+ *
+ * @return the PID of the executed command
+ */
 function sysCmdAsync($syscmd) {
-	exec($syscmd." > /dev/null &");
+	$pid = rtrim(shell_exec($syscmd." > /dev/null & echo $!"));
+	return $pid;
 }
 
 // format Output for "playlist"
