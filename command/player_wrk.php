@@ -346,13 +346,37 @@ session_start();
 		break;
 		
 		case 'poweroff':
-		if (isset($_SESSION['w_queueargs'])) {
-			$cmd = '{ sleep '. $_SESSION['w_queueargs'] .'m; mpc stop && poweroff; }';
-			sysCmdAsync($cmd);
-		}
-		else {
+
+		// classic poweroff
+		if (! isset($_SESSION['w_queueargs']) ) {
 			$cmd = 'mpc stop && poweroff';
 			sysCmd($cmd);
+
+			break;
+		}
+
+		// if there already are a poweroff planned
+		// if (! empty(glob(sys_get_temp_dir().'/volumio-poweroff-*' ))) {
+		// 	//TODO: display an error
+		// 	break;
+		// }
+
+		/* else, poweroff with delay */
+		$poweroffDelay = $_SESSION['w_queueargs']; // delay in minute
+		
+		$cmd = '{ sleep '. $poweroffDelay .'m; mpc stop && poweroff; }';
+		$pid = sysCmdAsync($cmd);
+
+		/*
+		 * Store in tmp file the PID and timestamp of the planned poweroff
+		 */
+		$filename = sys_get_temp_dir().'/volumio-poweroff';
+
+		if ($handle = fopen($filename, 'w')) {
+			$shutdownTimestamp = time() + ($poweroffDelay * 60);
+			fwrite($handle, $pid ."\r\n". $shutdownTimestamp);
+
+			fclose($handle);
 		}
 		break;
 		

@@ -248,6 +248,21 @@ html, body {
 	text-align: center;
 }
 
+#menu-top .poweroff-status {
+	display: block;
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 25px 0 0;
+	font-size: 16px;
+}
+
+#menu-top .poweroff-status #poweroff-countdown {
+	font-weight: bold;
+}
+#menu-top .poweroff-status #poweroff-countdown .countdown_amount {
+	font-size: 100%;
+}
 
 
 /* Menu bottom

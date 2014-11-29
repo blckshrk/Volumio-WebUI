@@ -69,13 +69,31 @@
 <?php
 // write backend response on UI Notify popup
 if (isset($_SESSION['notify']) && $_SESSION['notify'] != '') {
-sleep(1);
-ui_notify($_SESSION['notify']);
-session_start();
-$_SESSION['notify'] = '';
-session_write_close();
+	sleep(1);
+	ui_notify($_SESSION['notify']);
+	session_start();
+	$_SESSION['notify'] = '';
+	session_write_close();
 }
-?>
+
+// update poweroff countdown
+if (file_exists(sys_get_temp_dir().'/volumio-poweroff')) { ?>
+	<script type="text/javascript">
+	(function($) {
+		$.getJSON('command/poweroff.php', function(data) {
+			$('#poweroff-countdown').countdown({
+				until: new Date(data.timestamp * 1000), 
+				compact: false, // compact labels doesn't work...
+				format: 'hmS',
+				labels: ['years', 'months', 'weeks', 'days', 'hours', 'minutes', 'seconds'],
+				labels1: ['year', 'month', 'week', 'day', 'hour', 'minute', 'second'],
+				compactLabels: ['y', 'm', 'w', 'd'],
+				layout: '{h<}<b>{hn}</b> {hl}, {h>}{m<}<b>{mn}</b> {ml} and {m>} {sn} {sl}'
+			});
+		});
+	})(jQuery);
+	</script>
+<?php } ?>
 <div id="debug" <?php if ($_SESSION['hiddendebug'] == 1 OR $_SESSION['debug'] == 0) {echo "class=\"hide\"";} ?>>
 	<pre>
 		<?php

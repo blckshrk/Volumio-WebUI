@@ -85,6 +85,11 @@
 			<li><a href="#poweroff-modal" data-toggle="modal"><i class="icon-power-off sx"></i> Turn off</a></li>
 		</ul>
 	</div>
+	<?php if (file_exists(sys_get_temp_dir().'/volumio-poweroff')) { ?>
+	<div class="poweroff-status">
+		Poweroff in	<span id="poweroff-countdown"></span>
+	</div>
+	<?php } ?>
 	<div class="playback-controls">	
 		<button id="previous" class="btn btn-cmd" title="Previous"><i class="icon-step-backward"></i></button>
 		<button id="stop" class="btn btn-cmd" title="Stop"><i class="icon-stop"></i></button>
