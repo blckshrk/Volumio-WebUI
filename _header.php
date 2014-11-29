@@ -91,7 +91,7 @@
 		<button id="play" class="btn btn-cmd" title="Play/Pause"><i class="icon-play"></i></button>
 		<button id="next" class="btn btn-cmd" title="Next"><i class="icon-step-forward"></i></button>
 	</div>
-	<a class="home" href="index.php"><img src="images/logo.png" class="logo" alt="RaspyFi"></a>
+	<a class="home" href="index.php"><img src="images/logo.png" class="logo" alt="Volumio"></a>
 </div>
 <div id="menu-bottom" class="ui-footer ui-bar-f ui-footer-fixed slidedown" data-position="fixed" data-role="footer"  role="banner">
 	<ul>
