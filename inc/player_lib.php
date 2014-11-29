@@ -190,8 +190,13 @@ if (phpVer() == '5.3') {
 }
 
 function sysCmd($syscmd) {
-exec($syscmd." 2>&1", $output);
-return $output;
+	exec($syscmd." 2>&1", $output);
+	return $output;
+}
+
+// Asynchronous version of sysCmd()
+function sysCmdAsync($syscmd) {
+	exec($syscmd." > /dev/null &");
 }
 
 // format Output for "playlist"
