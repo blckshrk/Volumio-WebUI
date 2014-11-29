@@ -63,9 +63,15 @@ if (isset($_POST['syscmd'])){
 			session_start();
 			$_SESSION['w_queue'] = "poweroff";
 			$_SESSION['w_active'] = 1;
+
+			if (isset($_POST['delay'])) {
+				$_SESSION['w_queueargs'] = $_POST['delay'];
+			}
+
 			// set UI notify
 			$_SESSION['notify']['title'] = 'SHUTDOWN';
 			$_SESSION['notify']['msg'] = 'shutdown player initiated...';
+			
 			// unlock session file
 			playerSession('unlock');
 			} else {

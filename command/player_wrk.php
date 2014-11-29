@@ -346,8 +346,14 @@ session_start();
 		break;
 		
 		case 'poweroff':
-		$cmd = 'mpc stop && poweroff';
-		sysCmd($cmd);
+		if (isset($_SESSION['w_queueargs'])) {
+			$cmd = '{ sleep '. $_SESSION['w_queueargs'] .'m; mpc stop && poweroff; }';
+			sysCmdAsync($cmd);
+		}
+		else {
+			$cmd = 'mpc stop && poweroff';
+			sysCmd($cmd);
+		}
 		break;
 		
 		case 'mpdrestart':
