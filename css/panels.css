@@ -781,6 +781,177 @@ hr {
 	color: #34495E;
 }
 
+/************* Bootstrap 3 import *************/
+.form-inline .form-group {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+.form-inline .form-control {
+	display: inline-block;
+	width: auto;
+	vertical-align: middle;
+}
+.form-inline .input-group {
+	display: inline-table;
+	vertical-align: middle;
+}
+.form-inline .input-group .input-group-addon,
+.form-inline .input-group .input-group-btn,
+.form-inline .input-group .form-control {
+	width: auto;
+}
+.form-inline .input-group > .form-control {
+	width: 100%;
+}
+.input-group {
+	position: relative;
+	display: table;
+	border-collapse: separate;
+}
+.input-group .form-control {
+	position: relative;
+	z-index: 2;
+	float: left;
+	width: 100%;
+	margin-bottom: 0;
+}
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+	display: table-cell;
+}
+.input-group-addon:not(:first-child):not(:last-child),
+.input-group-btn:not(:first-child):not(:last-child),
+.input-group .form-control:not(:first-child):not(:last-child) {
+	border-radius: 0;
+}
+.input-group-addon,
+.input-group-btn {
+	width: 1%;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.input-group-addon {
+	padding: 6px 12px;
+	text-align: center;
+	background-color: #eff0f2;
+	border-radius: 6px;
+}
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.input-group-addon:first-child {
+	border-right: 0;
+}
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.input-group-addon:last-child {
+	border-left: 0;
+}
+.input-group-btn {
+	position: relative;
+	font-size: 0;
+	white-space: nowrap;
+}
+.input-group-btn > .btn {
+  	position: relative;
+}
+.input-group-btn > .btn + .btn {
+  	margin-left: -1px;
+}
+.input-group-btn > .btn:hover,
+.input-group-btn > .btn:focus,
+.input-group-btn > .btn:active {
+	z-index: 2;
+}
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group {
+	margin-right: -1px;
+}
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group {
+	margin-left: -1px;
+}
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+	     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+		    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-control::-moz-placeholder {
+	color: #999;
+	opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+	color: #999;
+}
+.form-control::-webkit-input-placeholder {
+	color: #999;
+}
+/***********************************************/
+
+/* modal buttons */
+.modal-body .form-inline .input-group > .form-control[type='number'] {
+	padding-bottom: 10px;
+	padding-top: 11px;
+}
+@media (max-width: 767px) {
+	.modal-body .form-inline .input-group > .form-control[type='number'] {
+	    padding-bottom: 0px;
+		padding-top: 1px;
+	}
+}
+.modal-body .form-inline .input-group > .btn-poweroff {
+	width: 372px;
+}
+.modal-body .form-inline .input-group > .btn-poweroff > .btn {
+	width: 100%;
+}
+.modal-body .form-inline .input-group > .poweroff-delay {
+	width: 60px;
+}
+
+.modal-body .form-inline .input-group > .input-group-addon {
+    font-size: 16.5px;
+    width: 60px;
+}
+
+
+
 /* Awesome Font fix */
 a:hover [class^="icon-"]:before, a:hover [class*=" icon-"]:before,
 button:hover [class^="icon-"]:before, button:hover [class*=" icon-"]:before,
@@ -889,7 +1060,6 @@ body { background: #cf0; } */
 		display: none;
 	}
 }
-<<<<<<< HEAD
 
 #lib-load {
 	color: #DDDDDD;
@@ -900,43 +1070,41 @@ body { background: #cf0; } */
 	top: 50%;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #lib-content {
 	display: none;
-        position: absolute;
-        top: 40px;
-        left: 0px;
-        right: 0px;
-        bottom: 40px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    right: 0px;
+    bottom: 40px;
 }
 
 #lib-genre {
-        position: absolute;
+    position: absolute;
 	overflow: auto;
 	width: 25%;
 	height: 25%;
 	border-bottom: 3px solid #212D39;
 }
 #lib-artist {
-        position: absolute;
+    position: absolute;
 	overflow: auto;
-        top: 25%;
-        width: 25%;
-        height: 75%;
+    top: 25%;
+    width: 25%;
+    height: 75%;
 	margin-top: 3px;
 }
 #lib-album {
-        position: absolute;
+    position: absolute;
 	overflow: auto;
-        left: 25%;
+    left: 25%;
 	width: 25%;
 	height: 100%;
 }
 #lib-file {
-        position: absolute;
+    position: absolute;
 	overflow: auto;
-        left: 50%;
+    left: 50%;
 	width: 50%;
 	height: 100%;
 }
@@ -998,12 +1166,3 @@ body { background: #cf0; } */
     color: #d34836;
     text-decoration: none;
 }
-
-
-
-=======
->>>>>>> parent of 31382c7... Load and display library (WIP)
-=======
->>>>>>> parent of 31382c7... Load and display library (WIP)
-=======
->>>>>>> parent of d788af1... New panel: library

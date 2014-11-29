@@ -1,18 +1,31 @@
-<form class="form-horizontal" action="settings.php" method="post">
-	<div id="poweroff-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="poweroff-modal-label" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<h3 id="poweroff-modal-label">Turn off the player</h3>
-		</div>
-		<div class="modal-body">
-			<button id="syscmd-poweroff" name="syscmd" value="poweroff" class="btn btn-primary btn-large btn-block"><i class="icon-power-off sx"></i> Power off</button>
-			<button id="syscmd-reboot" name="syscmd" value="reboot" class="btn btn-primary btn-large btn-block"><i class="icon-refresh sx"></i> Reboot</button>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		</div>
+<div id="poweroff-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="poweroff-modal-label" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3 id="poweroff-modal-label">Turn off the player</h3>
 	</div>
-</form>
+	<div class="modal-body">
+		<form class="form-inline" action="settings.php" method="post">
+			<input type="hidden" name="syscmd" value="poweroff">
+			<div class="input-group">
+				<span class="input-group-btn btn-poweroff">
+					<button id="syscmd-poweroff" type="submit" class="btn btn-primary btn-large"><i class="icon-power-off sx"></i> Power off</button>
+				</span>
+				<input type="number" class="form-control poweroff-delay" name="delay" value="0">
+				<span class="input-group-addon">minutes</span>
+			</div>
+		</form>
+
+		<form class="form-horizontal" action="settings.php" method="post">
+			<button id="syscmd-reboot" name="syscmd" value="reboot" class="btn btn-primary btn-large btn-block"><i class="icon-refresh sx"></i> Reboot</button>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+	</div>
+</div>
+
+
+
 <!-- loader -->
 <div id="loader"><div id="loaderbg"></div><div id="loadercontent"><i class="icon-refresh icon-spin"></i>connecting...</div></div>
 <script src="js/jquery-1.8.2.min.js"></script>
